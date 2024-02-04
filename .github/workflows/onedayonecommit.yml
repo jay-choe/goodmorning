@@ -1,0 +1,27 @@
+name: 1일 1 커밋
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  1day-1-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ github.repository }}
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
+          path: goodmoring
+
+      - name: plant
+        run: |
+          cd goodmoring
+          date +%Y-%m-%d일자 잔디 심기🍀 >> date.txt
+          git add .date.txt
+          git config --global user.email "jay-choe@github.com"
+          git config --global user.name "jay-choe"
+          git commit -m "$(date +%Y-%m-%d)일자 잔디 심기"
+          git push
