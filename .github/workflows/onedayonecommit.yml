@@ -1,4 +1,4 @@
-name: 1일 1 커밋
+name: 하루에 한 번 잔디 심기🍀
 
 on:
   schedule:
@@ -19,9 +19,9 @@ jobs:
       - name: plant
         run: |
           cd goodmoring
-          date +%Y-%m-%d일자 잔디 심기🍀 >> date.txt
-          git add .date.txt
+          date +%Y-%m-%d일자 잔디 심기🍀 >> plant.txt
+          git add .plant.txt
           git config --global user.email "jay-choe@github.com"
           git config --global user.name "jay-choe"
-          git commit -m "$(date +%Y-%m-%d)일자 잔디 심기"
+          git commit -m "🍀$(date +%Y-%m-%d)일자 잔디 심기🍀"
           git push
