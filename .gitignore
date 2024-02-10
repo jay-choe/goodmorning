@@ -40,4 +40,4 @@ out/
 .kotlin
 
 ### docker-volume
-.external
+.external/data/**
