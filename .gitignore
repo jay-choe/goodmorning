@@ -41,3 +41,4 @@ out/
 
 ### docker-volume
 .external/data/**
+external/data/**
